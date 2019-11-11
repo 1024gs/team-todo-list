@@ -1,0 +1,20 @@
+@import '../../vars';
+
+.TodoHeader {
+  color: #fff;
+  background-color: $primary-color;
+  background-image: url(../../../public/the-wave-coyote-buttes.jpg);
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top, center;
+  padding-top: 30px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.TodoHeader h1 {
+  font-size: $h4-fontsize;
+  font-weight: 300;
+  margin-bottom: 0;
+}

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders 1`] = `
+<div
+  className="App"
+>
+  <aside>
+    <SideNav>
+      <div
+        className="section"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col s12"
+          >
+            <Profile
+              user={
+                Object {
+                  "name": "Guglielmo Marconi",
+                }
+              }
+            />
+          </div>
+          <div
+            className="col s12"
+          >
+            <GroupList
+              items={
+                Array [
+                  Object {
+                    "active": true,
+                    "title": "Team To-do List",
+                  },
+                ]
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </SideNav>
+  </aside>
+  <main>
+    <Todo
+      getItemId={[Function]}
+      group={
+        Object {
+          "title": "Team To-do List",
+        }
+      }
+      items={
+        Array [
+          Object {
+            "id": 1,
+            "title": "Shortlist features for MVP",
+          },
+          Object {
+            "id": 2,
+            "isCompleted": true,
+            "title": "Launch demo page for SEO analysis",
+          },
+        ]
+      }
+      onAdd={[Function]}
+      onDelete={[Function]}
+      onToggle={[Function]}
+    />
+  </main>
+</div>
+`;

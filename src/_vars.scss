@@ -1,0 +1,8 @@
+@import '../customized-vendors/materialize-css/sass/components/color-variables';
+@import '../customized-vendors/materialize-css/sass/components/variables';
+
+$primary-font-family: 'Roboto', sans-serif;
+$typography-color: $off-black;
+
+$checkbox-color: color('teal', 'base') !default;
+$collection-item-active-bg: #f4efff;

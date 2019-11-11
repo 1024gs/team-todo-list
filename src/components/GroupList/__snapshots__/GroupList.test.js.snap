@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupList renders 1`] = `
+<div
+  className="GroupList"
+>
+  <ul
+    className="collection"
+  >
+    <li
+      className="collection-item active"
+      key="0"
+    >
+      <i
+        className="material-icons left"
+      >
+        list
+      </i>
+      Team To-do List
+    </li>
+  </ul>
+</div>
+`;

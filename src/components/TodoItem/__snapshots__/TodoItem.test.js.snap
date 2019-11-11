@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoItem renders 1`] = `
+<span
+  className="TodoItem"
+>
+  <span
+    className="checkbox-no-label"
+  >
+    <input
+      checked={false}
+      id="TodoItem-1"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <label
+      htmlFor="TodoItem-1"
+    />
+  </span>
+  <span
+    className="TodoItem-title truncate"
+  >
+    Todo 1
+  </span>
+  <button
+    className="TodoItem-delete btn-flat"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      delete
+    </i>
+  </button>
+</span>
+`;

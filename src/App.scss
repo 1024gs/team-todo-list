@@ -1,0 +1,28 @@
+@import 'vars';
+
+body {
+  margin: 0;
+  font-family: $primary-font-family;
+}
+
+@media #{$medium-and-up} {
+  .App main {
+    margin-left: 240px;
+  }
+
+  .side-nav.fixed {
+    transform: translateX(0);
+  }
+}
+
+/* Global helpers */
+.no-collapsing-margins {
+  /*
+    * prevents collapsing-margins
+    * https://stackoverflow.com/questions/1762539
+    */
+  margin-top: -1px;
+  padding-top: 1px;
+  margin-bottom: -1px;
+  padding-bottom: 1px;
+}

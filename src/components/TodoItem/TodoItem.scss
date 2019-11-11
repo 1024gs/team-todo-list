@@ -1,0 +1,32 @@
+.TodoItem {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  transition: 0.25s;
+  padding: 10px 20px;
+}
+
+.TodoItem-title {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.TodoItem-title input[type='text'] {
+  margin-bottom: 0;
+  box-shadow: none !important;
+}
+
+.TodoItem.completed .TodoItem-title {
+  text-decoration: line-through;
+  color: #9f9f9f;
+}
+
+.TodoItem-delete {
+  padding-right: 10px;
+  padding-left: 10px;
+  display: none;
+}
+
+.TodoItem:hover .TodoItem-delete {
+  display: inline-block;
+}

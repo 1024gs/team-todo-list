@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo renders 1`] = `
+<div
+  className="Todo"
+>
+  <TodoHeader
+    subtitle="Sun, November 10"
+    title="Team To-do List"
+  />
+  <TodoList
+    getItemId={[Function]}
+    items={
+      Array [
+        Object {
+          "id": 1,
+          "title": "Todo 1",
+        },
+        Object {
+          "id": 2,
+          "isCompleted": true,
+          "title": "Todo 2",
+        },
+      ]
+    }
+    onDelete={[Function]}
+    onToggle={[Function]}
+  />
+  <TodoAdd
+    onAdd={[Function]}
+  />
+</div>
+`;

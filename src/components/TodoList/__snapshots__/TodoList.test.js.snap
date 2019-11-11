@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList renders 1`] = `
+<div
+  className="TodoList"
+>
+  <TodoItem
+    getItemId={[Function]}
+    item={
+      Object {
+        "id": 1,
+        "title": "Todo 1",
+      }
+    }
+    key="1"
+    onDelete={[Function]}
+    onToggle={[Function]}
+  />
+  <TodoItem
+    getItemId={[Function]}
+    item={
+      Object {
+        "id": 2,
+        "isCompleted": true,
+        "title": "Todo 2",
+      }
+    }
+    key="2"
+    onDelete={[Function]}
+    onToggle={[Function]}
+  />
+</div>
+`;

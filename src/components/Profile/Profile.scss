@@ -1,0 +1,23 @@
+.Profile {
+  display: flex;
+  height: 70px;
+}
+
+.Profile .Profile-avatar,
+.Profile .Profile-username {
+  line-height: 70px;
+}
+
+.Profile-avatar {
+  margin-right: 10px;
+}
+
+.Profile-avatar .material-icons {
+  line-height: inherit;
+  font-size: 50px;
+  color: #ccc;
+}
+
+.Profile-username {
+  flex-grow: 1;
+}

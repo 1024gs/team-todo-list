@@ -12,26 +12,51 @@ import Todo from './components/Todo/Todo';
 
 const App = () => {
   const [todoItems, setTodoItems] = useState([
-    {id: 1, title: 'Shortlist features for MVP'},
-    {id: 2, title: 'Launch demo page for SEO analysis', isCompleted: true}
+    {id: 1, title: 'Shortlist features for MVP', groupId: 1},
+    {id: 2, title: 'Launch demo page for SEO analysis', isCompleted: true, groupId: 1}
+  ]);
+  const [groupItems, setGroupItems] = useState([
+    {id: 1, title: 'Team To-do List', active: true},
+    {id: 2, title: 'Team2 To-do List'}
   ]);
 
-  const todoId = (item) => item.id;
+  const propId = _.prop('id');
 
-  const todoIndex = (item) => todoItems.findIndex((x) => todoId(x) === todoId(item));
+  const activeGroup = () => groupItems.find((x) => x.active);
+
+  const findIndexByPropId = (item, items) => items.findIndex(_.equalsBy(propId, item));
 
   const handleAdd = () => {
-    setTodoItems(_.push({id: _.randomStr(6), title: 'New To-do'}, todoItems));
+    setTodoItems(
+      _.push(
+        {id: _.randomStr(6), title: 'New To-do', groupId: activeGroup().id},
+        todoItems
+      )
+    );
   };
 
   const handleToggle = (item, state) => {
     setTodoItems(
-      _.update(_.assoc('isCompleted', state), todoIndex(item, todoItems), todoItems)
+      _.update(
+        _.assoc('isCompleted', state),
+        findIndexByPropId(item, todoItems),
+        todoItems
+      )
     );
   };
 
   const handleDelete = (item) => {
-    setTodoItems(_.removeBy(_.equalsBy(todoId), item, todoItems));
+    setTodoItems(_.removeBy(_.equalsBy(propId), item, todoItems));
+  };
+
+  const handleGroupClick = (item) => {
+    setGroupItems(
+      _.update(
+        _.assoc('active', true),
+        findIndexByPropId(item, groupItems),
+        groupItems.map(_.dissoc('active'))
+      )
+    );
   };
 
   return (
@@ -45,7 +70,7 @@ const App = () => {
               </div>
 
               <div className="col s12">
-                <GroupList items={[{title: 'Team To-do List', active: true}]} />
+                <GroupList items={groupItems} onClick={handleGroupClick} />
               </div>
             </div>
           </div>
@@ -53,9 +78,9 @@ const App = () => {
       </aside>
       <main>
         <Todo
-          group={{title: 'Team To-do List'}}
-          items={todoItems}
-          getItemId={todoId}
+          group={activeGroup()}
+          items={todoItems.filter((x) => x.groupId === activeGroup().id)}
+          getItemId={propId}
           onAdd={handleAdd}
           onToggle={handleToggle}
           onDelete={handleDelete}

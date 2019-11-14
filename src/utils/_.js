@@ -81,6 +81,15 @@ const assoc = (prop, val, obj) => {
   r[prop] = val;
   return r;
 };
+const dissoc = (prop, obj) => {
+  let r = {};
+  for (let p in obj) {
+    if (prop !== p) {
+      r[p] = obj[p];
+    }
+  }
+  return r;
+};
 
 /**
  * custom functions
@@ -128,6 +137,7 @@ const _ = {
   prop: curry(prop),
   clone: clone,
   assoc: curry(assoc),
+  dissoc: curry(dissoc),
   mergeAll,
 
   randomStr: randomStr
